@@ -35,4 +35,4 @@ jobs:
                   context: .
                   push: true
                   tags: |
-                      ${{ steps.package-name.outputs.NAME }}:${{ steps.package-version.outputs.VERSION }}
+                      ghcr.io${{ steps.package-name.outputs.NAME }}:${{ steps.package-version.outputs.VERSION }}
