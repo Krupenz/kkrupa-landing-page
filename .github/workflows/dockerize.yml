@@ -35,4 +35,4 @@ jobs:
                   context: .
                   push: true
                   tags: |
-                      ghcr.io/${{ github.repository_owner }}/${{ steps.package-name.outputs.NAME }}:${{ steps.package-version.outputs.VERSION }}
+                      ${{ steps.package-name.outputs.NAME }}:${{ steps.package-version.outputs.VERSION }}
