@@ -35,4 +35,5 @@ jobs:
                   context: .
                   push: true
                   tags: |
-                      ghcr.io/${{ steps.package-name.outputs.NAME }}:${{ steps.package-version.outputs.VERSION }}
+                      ghcr.io/user/app:latest
+                      ghcr.io/user/app:1.0.0
