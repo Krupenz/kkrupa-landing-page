@@ -1,0 +1,49 @@
+name: Build and Store Docker Image
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    build_and_push:
+        name: Build image & push
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            packages: write
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Get package name
+              id: package-name
+              run: |
+                  echo "NAME=$(node -p "require('./package.json').name")" >> $GITHUB_OUTPUT
+
+            - name: Get package version
+              id: package-version
+              run: |
+                  echo "VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+
+            - name: set lower case owner name
+              run: |
+                  echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
+              env:
+                  OWNER: '${{ github.repository_owner }}'
+
+            - name: Login to GitHub Container Registry
+              uses: docker/login-action@v3
+              with:
+                  registry: ghcr.io
+                  username: ${{ github.repository_owner }}
+                  password: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Build and push Docker image
+              uses: docker/build-push-action@v6
+              with:
+                  context: .
+                  push: true
+                  tags: |
+                      ghcr.io/${{ env.OWNER_LC }}/${{ steps.package-name.outputs.NAME }}:latest
+                      ghcr.io/${{ env.OWNER_LC }}/${{ steps.package-name.outputs.NAME }}:${{ steps.package-version.outputs.VERSION }}

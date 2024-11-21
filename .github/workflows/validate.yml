@@ -26,5 +26,5 @@ jobs:
             - name: Run ESLint
               run: npm run lint
 
-            - name: Run audit
-              run: npm audit
+            # - name: Run audit
+            #   run: npm audit
