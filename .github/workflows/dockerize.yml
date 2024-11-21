@@ -2,7 +2,7 @@ name: Build and Store Docker Image
 
 on:
     push:
-        branches: [dockerize-ci]
+        branches: [main]
 
 jobs:
     build_and_push:
