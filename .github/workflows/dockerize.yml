@@ -35,5 +35,5 @@ jobs:
                   context: .
                   push: true
                   tags: |
-                      ghcr.io/user/app:latest
-                      ghcr.io/user/app:1.0.0
+                      ghcr.io/user/kkrupa-landing-page:latest
+                      ghcr.io/user/kkrupa-landing-page:1.0.0
