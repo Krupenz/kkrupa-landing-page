@@ -41,5 +41,5 @@ jobs:
                   context: .
                   push: true
                   tags: |
-                      ghcr.io/${{ github.repository_owner }}/${{ steps.package-name.outputs.NAME }}:latest
-                      ghcr.io/${{ github.repository_owner }}/${{ steps.package-name.outputs.NAME }}:${{ steps.package-version.outputs.VERSION }}
+                      ghcr.io/$OWNER_LC/${{ steps.package-name.outputs.NAME }}:latest
+                      ghcr.io/$OWNER_LC/${{ steps.package-name.outputs.NAME }}:${{ steps.package-version.outputs.VERSION }}
