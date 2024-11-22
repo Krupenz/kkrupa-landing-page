@@ -41,12 +41,18 @@ jobs:
                   username: ${{ secrets.SERVER_USER }}
                   key: ${{ secrets.SSH_PRIVATE_KEY }}
                   script: |
-                      docker stop nginx-with-landing-page || true
-                      docker rm nginx-with-landing-page || true
+                      docker compose down
 
-                      docker pull ${{ github.event.inputs.tag == '' && steps.latest_version.outputs.image || env.IMAGE }}
+                      if [ -n "${{ github.event.inputs.tag }}" ]; then
+                          VERSION="${{ github.event.inputs.tag }}"
+                      else
+                          VERSION="${{ steps.latest_version.outputs.tag }}"
+                      fi
 
-                      docker run -d \
-                        -p 80:80 \
-                        --name nginx-with-landing-page \
-                        ${{ github.event.inputs.tag == '' && steps.latest_version.outputs.image || env.IMAGE }}
+                      if grep -q "^IMAGE_VERSION=" .env; then
+                          sed -i "s/^IMAGE_VERSION=.*/IMAGE_VERSION=${VERSION}/" .env
+                      else
+                          echo "IMAGE_VERSION=${VERSION}" >> .env
+                      fi
+
+                      docker compose up -d
