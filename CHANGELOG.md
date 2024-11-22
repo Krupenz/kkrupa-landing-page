@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.1.2...v1.1.3) (2024-11-22)
+
+
+### Bug Fixes
+
+* **ci:** add other trigger for deploy workflow ([d3d2469](https://github.com/Krupenz/kkrupa-landing-page/commit/d3d24696843bff289403c82dfa96c92da2f76a68))
+
 ## [1.1.2](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.1.1...v1.1.2) (2024-11-22)
 
 
