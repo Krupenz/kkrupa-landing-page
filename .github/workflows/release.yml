@@ -5,7 +5,7 @@ on:
         types:
             - completed
         branches:
-            - release-ci
+            - main
 
 permissions:
     contents: read
