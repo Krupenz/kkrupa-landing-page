@@ -1,8 +1,12 @@
 name: Build and Store Docker Image
 
 on:
-    push:
-        branches: [main]
+    workflow_run:
+        workflows: ['Release']
+        types:
+            - completed
+        branches:
+            - main
 
 jobs:
     build_and_push:
@@ -45,5 +49,4 @@ jobs:
                   context: .
                   push: true
                   tags: |
-                      ghcr.io/${{ env.OWNER_LC }}/${{ steps.package-name.outputs.NAME }}:latest
                       ghcr.io/${{ env.OWNER_LC }}/${{ steps.package-name.outputs.NAME }}:${{ steps.package-version.outputs.VERSION }}

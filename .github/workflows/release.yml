@@ -1,8 +1,11 @@
 name: Release
 on:
-    push:
+    workflow_run:
+        workflows: ['Validate']
+        types:
+            - completed
         branches:
-            - release-ci
+            - main
 
 permissions:
     contents: read
