@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.1.1...v1.1.2) (2024-11-22)
+
+
+### Bug Fixes
+
+* add npm config to semantic release ([fa5d88c](https://github.com/Krupenz/kkrupa-landing-page/commit/fa5d88cc74d0a3cded709f44250a174ce1018173))
+
 ## [1.1.1](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.1.0...v1.1.1) (2024-11-22)
 
 
