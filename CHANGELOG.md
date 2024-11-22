@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.1.0...v1.1.1) (2024-11-22)
+
+
+### Bug Fixes
+
+* semantic-release plugins config ([dac4a20](https://github.com/Krupenz/kkrupa-landing-page/commit/dac4a20d1cfc2bbf7c34b1df5f7a71fc7a9de581))
+
 # [1.1.0](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.0.0...v1.1.0) (2024-11-22)
 
 
