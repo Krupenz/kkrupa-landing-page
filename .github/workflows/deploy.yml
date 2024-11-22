@@ -1,0 +1,52 @@
+name: Deploy
+
+on:
+    workflow_dispatch:
+        inputs:
+            tag:
+                description: 'Choose version to deploy (leave empty to deploy latest)'
+                required: false
+                type: string
+                default: ''
+    repository_dispatch:
+        types: [new_version_published]
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Set lower case owner name
+              run: |
+                  echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
+              env:
+                  OWNER: '${{ github.repository_owner }}'
+
+            - name: Get latest tag
+              id: latest_version
+              if: github.event.inputs.tag == ''
+              uses: shrink/actions-docker-latest-image@v1
+              with:
+                  repository: 'ghcr.io/${{ env.OWNER_LC }}/${{ steps.package-name.outputs.NAME }}'
+
+            - name: Set specific tag
+              if: github.event.inputs.tag != ''
+              run: |
+                  echo "IMAGE=ghcr.io/${{ env.OWNER_LC }}/${{ steps.package-name.outputs.NAME }}:${{ github.event.inputs.tag }}" >> $GITHUB_ENV
+
+            - name: Deploy through SSH
+              uses: appleboy/ssh-action@master
+              with:
+                  host: ${{ secrets.SERVER_HOST }}
+                  port: ${{ secrets.SERVER_PORT }}
+                  username: ${{ secrets.SERVER_USER }}
+                  key: ${{ secrets.SSH_PRIVATE_KEY }}
+                  script: |
+                      docker stop app_container || true
+                      docker rm app_container || true
+
+                      docker pull ${{ github.event.inputs.tag == '' && steps.latest_version.outputs.image || env.IMAGE }}
+
+                      docker run -d \
+                        -p 80:80 \
+                        --name nginx \
+                        ${{ github.event.inputs.tag == '' && steps.latest_version.outputs.image || env.IMAGE }}
