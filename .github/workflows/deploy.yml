@@ -8,8 +8,12 @@ on:
                 required: false
                 type: string
                 default: ''
-    repository_dispatch:
-        types: [new_version_published]
+    workflow_run:
+        workflows: ['Build and Store Docker Image']
+        types:
+            - completed
+        branches:
+            - main
 
 jobs:
     deploy:
