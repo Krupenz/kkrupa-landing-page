@@ -1,7 +1,8 @@
-name: 'Validate: npm install, build and lint'
+name: 'Validate'
 on:
     push:
         branches: ['main']
+
     pull_request:
         types: [opened, synchronize, reopened]
         branches: ['main']
