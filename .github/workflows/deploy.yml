@@ -29,7 +29,7 @@ jobs:
               id: latest_version
               if: github.event.inputs.tag == ''
               run: |
-                  latest_tag=$(gh api repos/Krupenz/kkrupa-landing-page/tags | jq -r ".[0].name[1:])
+                  latest_tag=$(gh api repos/Krupenz/kkrupa-landing-page/tags | jq -r ".[0].name[1:]")
                     echo "TAG=$latest_tag" >> $GITHUB_ENV
 
             - name: Set specific tag
