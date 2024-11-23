@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.1.3...v1.2.0) (2024-11-23)
+
+
+### Features
+
+* release new version for tests ([5604a28](https://github.com/Krupenz/kkrupa-landing-page/commit/5604a2865d4dcffcd2726050ed8424d64732068f))
+
 ## [1.1.3](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.1.2...v1.1.3) (2024-11-22)
 
 
