@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.2.0...v1.3.0) (2024-11-23)
+
+
+### Features
+
+* refactor pipelines ([11a83b4](https://github.com/Krupenz/kkrupa-landing-page/commit/11a83b4be0c1ab16a37e5471fc70a200a84913d0))
+
 # [1.2.0](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.1.3...v1.2.0) (2024-11-23)
 
 
