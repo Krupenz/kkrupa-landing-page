@@ -1,3 +1,10 @@
+## [1.4.5](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.4.4...v1.4.5) (2024-11-23)
+
+
+### Bug Fixes
+
+* release job ([f5fd4e4](https://github.com/Krupenz/kkrupa-landing-page/commit/f5fd4e43782ff3fc6533bdc1f6e4379e1b7a7745))
+
 ## [1.4.4](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.4.3...v1.4.4) (2024-11-23)
 
 
