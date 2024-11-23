@@ -1,3 +1,10 @@
+## [1.4.6](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.4.5...v1.4.6) (2024-11-23)
+
+
+### Bug Fixes
+
+* refactor workflows ([1b5ab5b](https://github.com/Krupenz/kkrupa-landing-page/commit/1b5ab5b2d7167ec36041fc63ee17e25ae472a4ca))
+
 ## [1.4.5](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.4.4...v1.4.5) (2024-11-23)
 
 
