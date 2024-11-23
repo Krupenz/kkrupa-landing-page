@@ -45,7 +45,7 @@ jobs:
 
             - name: Get commit hash
               id: get-commit-hash
-              run: echo "commit_hash=$(git rev-parse HEAD)" >>
+              run: echo "commit_hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
     build_and_push:
         needs: release
         name: Build image & push
