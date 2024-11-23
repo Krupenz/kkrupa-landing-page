@@ -8,12 +8,16 @@ on:
                 required: false
                 type: string
                 default: ''
-    release:
+    workflow_run:
+        workflows: ['Release']
         types:
-            - published
+            - completed
+        branches:
+            - main
 jobs:
     deploy:
         runs-on: ubuntu-latest
+        if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}
         steps:
             - name: Set lower case owner name
               run: |
