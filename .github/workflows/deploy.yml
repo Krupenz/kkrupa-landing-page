@@ -28,8 +28,10 @@ jobs:
             - name: Set latest tag
               id: latest_version
               if: github.event.inputs.tag == ''
+              env:
+                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               run: |
-                  echo "TAG=$(gh api repos/Krupenz/kkrupa-landing-page/tags | jq -r ".[0].name[1:]")" >> $GITHUB_ENV
+                  echo "TAG=$(gh api repos/${{ github.repository }}/tags | jq -r ".[0].name[1:]")" >> $GITHUB_ENV
 
             - name: Set specific tag
               if: github.event.inputs.tag != ''
