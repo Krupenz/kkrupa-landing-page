@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.4.2...v1.4.3) (2024-11-23)
+
+
+### Bug Fixes
+
+* deploy workflow ([a0316ac](https://github.com/Krupenz/kkrupa-landing-page/commit/a0316aca6dcfdc7b4dc2943efd378d3575ec35e0))
+
 ## [1.4.2](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.4.1...v1.4.2) (2024-11-23)
 
 
