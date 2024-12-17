@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import TypeText from './TypeText';
 import emailjs from '@emailjs/browser';
 import { FaSpinner } from 'react-icons/fa';
 
@@ -48,6 +47,7 @@ const ContactForm: React.FC = () => {
                 }, 3000);
             }
         } catch (e) {
+            console.error(e);
             setIsError(true);
             setTimeout(() => {
                 setIsError(false);
@@ -82,8 +82,8 @@ const ContactForm: React.FC = () => {
     };
 
     return (
-        <section className="py-16 px-4 md:py-16">
-            <div className="mx-auto p-4 md:p-8 bg-black rounded-lg shadow-md max-w-[40%] min-w-[320px]">
+        <section className="py-4 px-4 md:py-4">
+            <div className="mx-auto p-4 md:p-8 bg-formBackground rounded-lg shadow-md max-w-[40%] min-w-[320px] transition-opacity duration-500 ease-in opacity-0 animate-fadeIn">
                 <form
                     className="flex flex-col gap-4 transition-opacity duration-500 ease-in opacity-0 animate-fadeIn"
                     onSubmit={handleSubmit}
@@ -99,7 +99,7 @@ const ContactForm: React.FC = () => {
                             })
                         }
                         required
-                        className="w-full p-3 text-base text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                        className="w-full bg-background p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-opacity duration-500 ease-in opacity-0 animate-fadeIn"
                     />
                     <input
                         type="email"
@@ -112,7 +112,7 @@ const ContactForm: React.FC = () => {
                             })
                         }
                         required
-                        className="w-full p-3 text-base text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                        className="w-full p-3 bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-opacity duration-500 ease-in opacity-0 animate-fadeIn"
                     />
                     <textarea
                         placeholder="Message content"
@@ -124,7 +124,7 @@ const ContactForm: React.FC = () => {
                             })
                         }
                         required
-                        className="w-full p-3 text-base text-black border border-gray-300 rounded-md min-h-[150px] resize-y focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                        className="w-full p-3 bg-background rounded-md min-h-[150px] resize-y focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-opacity duration-500 ease-in opacity-0 animate-fadeIn"
                     />
                     <button
                         type="submit"
