@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.4.6...v1.5.0) (2024-12-17)
+
+
+### Features
+
+* first version of my landing page ([#9](https://github.com/Krupenz/kkrupa-landing-page/issues/9)) ([636dfb6](https://github.com/Krupenz/kkrupa-landing-page/commit/636dfb674e6b4a56e4b6d88f9e23c3aabe880885))
+
 ## [1.4.6](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.4.5...v1.4.6) (2024-11-23)
 
 
