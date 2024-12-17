@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.5.0...v1.6.0) (2024-12-17)
+
+
+### Features
+
+* change page title ([3c7a571](https://github.com/Krupenz/kkrupa-landing-page/commit/3c7a571f25919caac1de1c9112d2e3ec61b0976c))
+
 # [1.5.0](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.4.6...v1.5.0) (2024-12-17)
 
 
