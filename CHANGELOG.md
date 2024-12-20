@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.6.0...v1.6.1) (2024-12-20)
+
+
+### Bug Fixes
+
+* add envs needed for sending email ([64543ca](https://github.com/Krupenz/kkrupa-landing-page/commit/64543ca2431997978dace776dfb269d055332b74))
+
 # [1.6.0](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.5.0...v1.6.0) (2024-12-17)
 
 
