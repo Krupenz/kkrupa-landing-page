@@ -1,14 +1,14 @@
 FROM node:21-alpine3.20 AS builder
+ARG VITE_EMAILJS_PUBLIC_KEY
+ARG VITE_GMAIL_SERVICE_ID
+ARG VITE_EMAIL_TEMPLATE_ID
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
-RUN --mount=type=secret,id=VITE_EMAILJS_PUBLIC_KEY \
-    --mount=type=secret,id=VITE_GMAIL_SERVICE_ID \
-    --mount=type=secret,id=VITE_EMAIL_TEMPLATE_ID \
-    export VITE_EMAILJS_PUBLIC_KEY=$(cat /run/secrets/VITE_EMAILJS_PUBLIC_KEY) && \
-    export VITE_GMAIL_SERVICE_ID=$(cat /run/secrets/VITE_GMAIL_SERVICE_ID) && \
-    export VITE_EMAIL_TEMPLATE_ID=$(cat /run/secrets/VITE_EMAIL_TEMPLATE_ID)
+RUN echo $VITE_EMAILJS_PUBLIC_KEY > /run/secrets/VITE_EMAILJS_PUBLIC_KEY && \
+    echo $VITE_GMAIL_SERVICE_ID > /run/secrets/VITE_GMAIL_SERVICE_ID && \
+    echo $VITE_EMAIL_TEMPLATE_ID > /run/secrets/VITE_EMAIL_TEMPLATE_ID
 RUN npm run build
 
 FROM nginx:alpine-slim
