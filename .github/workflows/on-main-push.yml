@@ -13,15 +13,17 @@ jobs:
         uses: ./.github/workflows/reusable-validate.yml
     release:
         needs: validate
+        uses: ./.github/workflows/reusable-release.yml
+    print_release_outputs:
+        needs: release
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - uses: ./.github/workflows/reusable-release.yml
-            - name: print outputs
+            - name: Print release outputs
               run: echo "$OUTPUTS"
               shell: bash
               env:
-                  OUTPUTS: ${{ toJSON(steps.release.outputs) }}
+                  OUTPUTS: ${{ toJSON(needs.release.outputs) }}
     build_and_push:
         if: needs.release.outputs.is_new_release == 'true'
         needs: release
