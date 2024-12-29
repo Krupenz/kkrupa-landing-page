@@ -1,4 +1,4 @@
-name: Build container
+name: '[Reusable] Build container'
 on:
     workflow_call:
         inputs:

@@ -1,4 +1,4 @@
-name: Reusable Release
+name: '[Reusable] Release'
 on: workflow_call
 jobs:
     release:

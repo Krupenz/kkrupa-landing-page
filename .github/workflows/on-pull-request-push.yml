@@ -1,4 +1,4 @@
-name: Validate on push
+name: 'Validate on pull request push'
 on:
     pull_request:
         types: [opened, synchronize, reopened]

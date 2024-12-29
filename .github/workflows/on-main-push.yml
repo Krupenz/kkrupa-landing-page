@@ -1,7 +1,12 @@
-name: Main Workflow
+name: 'Continous deployment on push to main'
 on:
     push:
         branches: ['main']
+
+permissions:
+    contents: read
+    packages: write
+
 jobs:
     validate:
         uses: ./.github/workflows/reusable-validate.yml
