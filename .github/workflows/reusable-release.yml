@@ -53,3 +53,8 @@ jobs:
                   else
                   echo "is_new_release=false" >> $GITHUB_OUTPUT
                   fi
+            - name: print outputs
+              run: echo "$OUTPUTS"
+              shell: bash
+              env:
+                  OUTPUTS: ${{ toJSON(steps.verify-release.outputs) }}
