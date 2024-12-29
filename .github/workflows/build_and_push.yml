@@ -86,9 +86,5 @@ jobs:
                         github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' ||
                         github.event_name == 'workflow_dispatch' && inputs.push_image
                       }}
-                  build-args: |
-                      VITE_EMAILJS_PUBLIC_KEY=${{secrets.VITE_EMAILJS_PUBLIC_KEY}}
-                      VITE_GMAIL_SERVICE_ID=${{secrets.VITE_GMAIL_SERVICE_ID}}
-                      VITE_EMAIL_TEMPLATE_ID=${{secrets.VITE_EMAIL_TEMPLATE_ID}}
                   tags: |
                       ghcr.io/${{ env.OWNER_LC }}/${{ env.PACKAGE_NAME }}:${{ env.PACKAGE_VERSION }}
