@@ -13,7 +13,14 @@ jobs:
         uses: ./.github/workflows/reusable-validate.yml
     release:
         needs: validate
-        uses: ./.github/workflows/reusable-release.yml
+        runs-on: ubuntu-latest
+        steps:
+            - uses: ./.github/workflows/reusable-release.yml
+            - name: print outputs
+              run: echo "$OUTPUTS"
+              shell: bash
+              env:
+                  OUTPUTS: ${{ toJSON(steps.release.outputs) }}
     build_and_push:
         if: needs.release.outputs.is_new_release == 'true'
         needs: release
