@@ -11,6 +11,7 @@ jobs:
                   node-version: '22.x'
                   cache: 'npm'
     install:
+        needs: checkout
         runs-on: ubuntu-latest
         steps:
             - name: Install dependencies
@@ -22,6 +23,7 @@ jobs:
             - name: Build
               run: npm run build
     static-code-analysis:
+        needs: checkout
         runs-on: ubuntu-latest
         steps:
             - name: Run ESLint
