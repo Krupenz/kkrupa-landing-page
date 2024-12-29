@@ -1,3 +1,10 @@
+## [1.6.6](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.6.5...v1.6.6) (2024-12-29)
+
+
+### Bug Fixes
+
+* **ci:** pass secrets to deploy workflow ([ca25fb7](https://github.com/Krupenz/kkrupa-landing-page/commit/ca25fb7dbcc2894440e76aa9e9e4d9e34f52ed75))
+
 ## [1.6.5](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.6.4...v1.6.5) (2024-12-29)
 
 
