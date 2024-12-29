@@ -1,3 +1,12 @@
+## [1.6.3](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.6.2...v1.6.3) (2024-12-29)
+
+
+### Bug Fixes
+
+* **ci:** add permissions to main workflow ([703e4f9](https://github.com/Krupenz/kkrupa-landing-page/commit/703e4f93899b2c6d00511c99075b2b3c1745133f))
+* **ci:** add permissions to release workflow ([b9e4a7c](https://github.com/Krupenz/kkrupa-landing-page/commit/b9e4a7ca0dfaf1e891628535fa962ef33f4c0872))
+* **ci:** fix permissions in main workflow ([b478043](https://github.com/Krupenz/kkrupa-landing-page/commit/b478043ca026c71cd58b4b483ab1dafcca8f489c))
+
 ## [1.6.2](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.6.1...v1.6.2) (2024-12-29)
 
 
