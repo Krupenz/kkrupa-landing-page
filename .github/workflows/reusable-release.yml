@@ -5,7 +5,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - uses: ./.github/actions/setup-node
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: '22.x'
+                  cache: 'npm'
             - name: Install dependencies
               run: npm clean-install
             - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
@@ -25,7 +28,10 @@ jobs:
             released_version: ${{ steps.get-new-version.outputs.released_version }}
         steps:
             - uses: actions/checkout@v4
-            - uses: ./.github/actions/setup-node
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: '22.x'
+                  cache: 'npm'
             - name: Verify if new release was created
               id: verify-release
               run: |

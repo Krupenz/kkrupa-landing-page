@@ -5,7 +5,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - uses: ./.github/actions/setup-node
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: '22.x'
+                  cache: 'npm'
             - name: Install dependencies
               run: npm ci
     build:
@@ -13,13 +16,19 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - uses: ./.github/actions/setup-node
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: '22.x'
+                  cache: 'npm'
             - name: Build
               run: npm run build
     static-code-analysis:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - uses: ./.github/actions/setup-node
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: '22.x'
+                  cache: 'npm'
             - name: Run ESLint
               run: npm run lint
