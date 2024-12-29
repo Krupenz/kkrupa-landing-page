@@ -1,0 +1,16 @@
+name: Main Workflow
+on:
+    push:
+        branches: ['main']
+jobs:
+    validate:
+        uses: ./.github/workflows/reusable/reusable-validate.yml
+    release:
+        needs: validate
+        uses: ./.github/workflows/reusable/reusable-release.yml
+    deploy:
+        needs: release
+        if: needs.release.new_release.outputs.is_new_release == 'true'
+        uses: ./.github/workflows/reusable/reusable-deploy.yml
+        with:
+            tag: ${{ needs.release.outputs.released_version }}
