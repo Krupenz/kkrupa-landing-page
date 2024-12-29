@@ -4,15 +4,18 @@ on:
         outputs:
             is_new_release:
                 description: 'Boolean value indicating if a new release was created'
-                value: ${{ jobs.check_release.outputs.is_new_release }}
+                value: ${{ jobs.release.outputs.is_new_release }}
             released_version:
                 description: 'Released version number'
-                value: ${{ jobs.check_release.outputs.released_version }}
+                value: ${{ jobs.release.outputs.released_version }}
 jobs:
     release:
         runs-on: ubuntu-latest
         permissions:
             contents: write
+        outputs:
+            is_new_release: ${{ steps.verify-release.outputs.is_new_release }}
+            released_version: ${{ steps.verify-release.outputs.released_version }}
         steps:
             - uses: actions/checkout@v4
             - uses: actions/setup-node@v4
@@ -30,18 +33,6 @@ jobs:
             - name: Get commit hash
               id: get-commit-hash
               run: echo "commit_hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
-    check_release:
-        needs: release
-        runs-on: ubuntu-latest
-        outputs:
-            is_new_release: ${{ steps.verify-release.outputs.is_new_release }}
-            released_version: ${{ steps.verify-release.outputs.released_version }}
-        steps:
-            - uses: actions/checkout@v4
-            - uses: actions/setup-node@v4
-              with:
-                  node-version: '22.x'
-                  cache: 'npm'
             - name: Verify if new release was created
               id: verify-release
               run: |
