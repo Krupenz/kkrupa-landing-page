@@ -8,9 +8,9 @@ interface FormData {
     message: string;
 }
 
-const EmailJsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-const GmailServiceId = import.meta.env.VITE_GMAIL_SERVICE_ID;
-const EmailTemplateId = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
+const VITE_EMAILJS_PUBLIC_KEY = 'Fkv-UBOwLY92_Anb4';
+const VITE_GMAIL_SERVICE_ID = 'service_i9ega5s';
+const VITE_EMAIL_TEMPLATE_ID = 'template_kd9ofxd';
 
 const ContactForm: React.FC = () => {
     const [formData, setFormData] = useState<FormData>({
@@ -21,7 +21,7 @@ const ContactForm: React.FC = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isPending, setIsPending] = useState(false);
     const [isError, setIsError] = useState(false);
-    emailjs.init(EmailJsPublicKey);
+    emailjs.init(VITE_EMAILJS_PUBLIC_KEY);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -29,14 +29,14 @@ const ContactForm: React.FC = () => {
 
         try {
             const notificationToMe = await emailjs.send(
-                GmailServiceId,
-                EmailTemplateId,
+                VITE_GMAIL_SERVICE_ID,
+                VITE_EMAIL_TEMPLATE_ID,
                 {
                     from_name: formData.name,
                     from_email: formData.email,
                     message: formData.message,
                 },
-                EmailJsPublicKey,
+                VITE_EMAILJS_PUBLIC_KEY,
             );
 
             if (notificationToMe.status === 200) {
