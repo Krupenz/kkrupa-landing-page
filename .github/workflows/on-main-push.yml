@@ -23,5 +23,6 @@ jobs:
     deploy:
         needs: build_and_push
         uses: ./.github/workflows/reusable-deploy.yml
+        secrets: inherit
         with:
             tag: ${{ needs.release.outputs.released_version }}
