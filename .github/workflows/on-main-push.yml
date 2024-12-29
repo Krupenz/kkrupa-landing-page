@@ -1,4 +1,5 @@
 name: 'Continous deployment on push to main'
+
 on:
     push:
         branches: ['main']
