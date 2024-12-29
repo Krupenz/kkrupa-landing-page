@@ -32,5 +32,5 @@ jobs:
                   key: ${{ secrets.SSH_PRIVATE_KEY }}
                   script: |
                       docker compose down
-                      sed -i "s/^VERSION=.*/VERSION=${{ env.TAG }}/" .env
+                      sed -i "s/^VERSION=.*/VERSION=${{ inputs.tag }}/" .env
                       docker compose up -d
