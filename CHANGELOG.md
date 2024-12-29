@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.6.1...v1.6.2) (2024-12-29)
+
+
+### Bug Fixes
+
+* remove envs for emailjs ([#11](https://github.com/Krupenz/kkrupa-landing-page/issues/11)) ([7650db3](https://github.com/Krupenz/kkrupa-landing-page/commit/7650db3e06a53ee98622344da28eff1e9da06985))
+
 ## [1.6.1](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.6.0...v1.6.1) (2024-12-20)
 
 
