@@ -1,3 +1,11 @@
+## [1.6.7](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.6.6...v1.6.7) (2024-12-29)
+
+
+### Bug Fixes
+
+* **ci:** fix adding debug output ([cb1bbe8](https://github.com/Krupenz/kkrupa-landing-page/commit/cb1bbe8f01741c0e03e246608ccee5a54266c9a3))
+* **ci:** move debug output to other job ([58871d4](https://github.com/Krupenz/kkrupa-landing-page/commit/58871d415d2a5917e642172e472e675e04d89bc1))
+
 ## [1.6.6](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.6.5...v1.6.6) (2024-12-29)
 
 
