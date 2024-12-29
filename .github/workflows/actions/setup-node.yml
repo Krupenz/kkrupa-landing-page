@@ -4,8 +4,6 @@ description: 'Checks out repository and sets up Node.js'
 runs:
     using: 'composite'
     steps:
-        - name: Checkout
-          uses: actions/checkout@v4
         - name: Setup Node.js
           uses: actions/setup-node@v4
           with:

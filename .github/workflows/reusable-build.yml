@@ -24,9 +24,8 @@ jobs:
         name: Build image & push
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout repository
-              uses: actions/checkout@v4
-
+            - uses: actions/checkout@v4
+            - uses: ./.github/actions/setup-node
             - name: Get package name
               id: package-name
               run: |
