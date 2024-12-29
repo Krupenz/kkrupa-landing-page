@@ -4,4 +4,4 @@ on:
         types: [opened, synchronize, reopened]
 jobs:
     validate:
-        uses: ./.github/workflows/reusable/reusable-validate.yml
+        uses: ./.github/workflows/reusable-validate.yml
