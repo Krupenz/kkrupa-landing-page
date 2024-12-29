@@ -1,5 +1,13 @@
 name: '[Reusable] Release'
-on: workflow_call
+on:
+    workflow_call:
+        outputs:
+            is_new_release:
+                description: 'Boolean value indicating if a new release was created'
+                value: ${{ jobs.check_release.outputs.is_new_release }}
+            released_version:
+                description: 'Released version number'
+                value: ${{ jobs.check_release.outputs.released_version }}
 jobs:
     release:
         runs-on: ubuntu-latest
@@ -27,7 +35,7 @@ jobs:
         runs-on: ubuntu-latest
         outputs:
             is_new_release: ${{ steps.verify-release.outputs.is_new_release }}
-            released_version: ${{ steps.get-new-version.outputs.released_version }}
+            released_version: ${{ steps.verify-release.outputs.released_version }}
         steps:
             - uses: actions/checkout@v4
             - uses: actions/setup-node@v4
