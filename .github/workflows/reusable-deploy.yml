@@ -1,0 +1,36 @@
+name: Deploy
+
+on:
+    workflow_call:
+        inputs:
+            tag:
+                description: 'Choose version to deploy'
+                required: true
+                type: string
+    workflow_dispatch:
+        inputs:
+            tag:
+                description: 'Choose version to deploy'
+                required: true
+                type: string
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Set lower case owner name
+              run: |
+                  echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
+              env:
+                  OWNER: '${{ github.repository_owner }}'
+
+            - name: Deploy through SSH
+              uses: appleboy/ssh-action@master
+              with:
+                  host: ${{ secrets.SERVER_HOST }}
+                  port: ${{ secrets.SERVER_PORT }}
+                  username: ${{ secrets.SERVER_USER }}
+                  key: ${{ secrets.SSH_PRIVATE_KEY }}
+                  script: |
+                      docker compose down
+                      sed -i "s/^VERSION=.*/VERSION=${{ inputs.tag }}/" .env
+                      docker compose up -d

@@ -1,12 +1,5 @@
-name: 'Validate'
-on:
-    push:
-        branches: ['main']
-
-    pull_request:
-        types: [opened, synchronize, reopened]
-        branches: ['main']
-
+name: Reusable Validate
+on: workflow_call
 jobs:
     validate:
         runs-on: ubuntu-latest
@@ -15,17 +8,11 @@ jobs:
             - name: Setup Node.js
               uses: actions/setup-node@v4
               with:
-                  node-version: '18.x'
+                  node-version: '22.x'
                   cache: 'npm'
-
             - name: Install dependencies
               run: npm ci
-
             - name: Build
               run: npm run build
-
             - name: Run ESLint
               run: npm run lint
-
-            # - name: Run audit
-            #   run: npm audit
