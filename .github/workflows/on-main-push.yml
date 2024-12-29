@@ -8,8 +8,10 @@ jobs:
     release:
         needs: validate
         uses: ./.github/workflows/reusable-release.yml
-    deploy:
+    build_and_push:
         needs: release
+    deploy:
+        needs: build_and_push
         if: needs.release.new_release.outputs.is_new_release == 'true'
         uses: ./.github/workflows/reusable-deploy.yml
         with:
