@@ -1,3 +1,10 @@
+## [1.6.5](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.6.4...v1.6.5) (2024-12-29)
+
+
+### Bug Fixes
+
+* **ci:** move verify release to same job as semantic release trigger ([3ab0a59](https://github.com/Krupenz/kkrupa-landing-page/commit/3ab0a59448e3f4169e4356b66192163d6e016747))
+
 ## [1.6.4](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.6.3...v1.6.4) (2024-12-29)
 
 
