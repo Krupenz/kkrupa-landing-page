@@ -1,3 +1,10 @@
+## [1.6.4](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.6.3...v1.6.4) (2024-12-29)
+
+
+### Bug Fixes
+
+* **ci:** passing outputs from release workflow ([beccaba](https://github.com/Krupenz/kkrupa-landing-page/commit/beccabaad891158ef354d44fab5e1d1d2303c269))
+
 ## [1.6.3](https://github.com/Krupenz/kkrupa-landing-page/compare/v1.6.2...v1.6.3) (2024-12-29)
 
 
