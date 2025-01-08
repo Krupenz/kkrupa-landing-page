@@ -10,6 +10,7 @@ It is still under development, but visit Actions to see its continous deployment
 Tools and libraries used in this project:
 * [Vite](https://vite.dev/)
 * [React](https://react.dev/)
+* [TailwindCSS](https://tailwindcss.com/)
 * [TypedJS](https://github.com/mattboldt/typed.js)
 * [EmailJS](https://www.emailjs.com/)
 * [Eslint](https://eslint.org/)
